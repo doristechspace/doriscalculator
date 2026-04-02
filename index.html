@@ -12,33 +12,48 @@
 <body>
     <div class="calculator-container">
         <h1 class="creator-title">Created by somiee</h1>
-        <div class="calculator">
+        <div class="calculator sci-calculator">
+            <div class="mode-toggle">
+                <button class="mode-btn active" id="deg-btn">DEG</button>
+                <button class="mode-btn" id="rad-btn">RAD</button>
+            </div>
             <div class="display">
                 <div class="previous-operand" data-previous-operand></div>
                 <div class="current-operand" data-current-operand>0</div>
             </div>
             
-            <div class="keypad">
+            <div class="keypad scientific-keypad">
+                <button class="btn btn-sci" data-sci-op="sin">sin</button>
+                <button class="btn btn-sci" data-sci-op="cos">cos</button>
+                <button class="btn btn-sci" data-sci-op="tan">tan</button>
                 <button class="btn btn-action" data-all-clear>AC</button>
                 <button class="btn btn-action" data-delete>DEL</button>
+                
+                <button class="btn btn-sci" data-sci-op="log">log</button>
+                <button class="btn btn-sci" data-sci-op="ln">ln</button>
+                <button class="btn btn-sci" data-sci-op="sqrt">√</button>
                 <button class="btn btn-action" data-operation>%</button>
                 <button class="btn btn-operator" data-operation>÷</button>
                 
+                <button class="btn btn-sci" data-constant="pi">π</button>
                 <button class="btn" data-number>7</button>
                 <button class="btn" data-number>8</button>
                 <button class="btn" data-number>9</button>
                 <button class="btn btn-operator" data-operation>×</button>
                 
+                <button class="btn btn-sci" data-constant="e">e</button>
                 <button class="btn" data-number>4</button>
                 <button class="btn" data-number>5</button>
                 <button class="btn" data-number>6</button>
                 <button class="btn btn-operator" data-operation>-</button>
                 
+                <button class="btn btn-sci" data-sci-op="square">x²</button>
                 <button class="btn" data-number>1</button>
                 <button class="btn" data-number>2</button>
                 <button class="btn" data-number>3</button>
                 <button class="btn btn-operator" data-operation>+</button>
                 
+                <button class="btn btn-sci" data-operation>^</button>
                 <button class="btn btn-zero" data-number>0</button>
                 <button class="btn" data-number>.</button>
                 <button class="btn btn-equals" data-equals>=</button>
