@@ -1,0 +1,202 @@
+:root {
+    --bg-color: #0f0c29; /* fallback */
+    --calc-bg: rgba(25, 25, 35, 0.4);
+    --calc-border: rgba(255, 255, 255, 0.12);
+    --calc-shadow: rgba(0, 0, 0, 0.4);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --btn-bg: rgba(255, 255, 255, 0.03);
+    --btn-bg-hover: rgba(255, 255, 255, 0.1);
+    --btn-bg-active: rgba(255, 255, 255, 0.15);
+    --btn-action-bg: rgba(255, 255, 255, 0.08);
+    --btn-action-hover: rgba(255, 255, 255, 0.15);
+    --btn-operator-bg: rgba(255, 126, 103, 0.8); /* Premium coral alert/operator */
+    --btn-operator-hover: rgba(255, 126, 103, 1);
+    --btn-equals-bg: rgba(116, 104, 255, 0.8); /* Deep violet equals */
+    --btn-equals-hover: rgba(116, 104, 255, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    background-size: 300% 300%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-primary);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.calculator-container {
+    padding: 2.5rem;
+    position: relative;
+}
+
+/* Background blur decorative orbs */
+.calculator-container::before,
+.calculator-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.calculator-container::before {
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #ff7e67;
+}
+
+.calculator-container::after {
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    background: #7468ff;
+}
+
+.creator-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    animation: fadeInOut 4s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0.7; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(-2px); text-shadow: 0 4px 15px rgba(255,255,255,0.2); }
+}
+
+.calculator {
+    width: 340px;
+    background: var(--calc-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--calc-border);
+    border-radius: 30px;
+    padding: 24px;
+    box-shadow: 0 25px 45px var(--calc-shadow);
+}
+
+.display {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px 10px 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-bottom: 1px solid var(--calc-border);
+    margin-bottom: 24px;
+}
+
+.previous-operand {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 400;
+    min-height: 1.6rem;
+}
+
+.current-operand {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: -0.05rem;
+    margin-top: 5px;
+    line-height: 1;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background: var(--btn-bg);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 16px;
+    height: 65px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.btn:hover {
+    background: var(--btn-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    background: var(--btn-bg-active);
+    transform: translateY(1px);
+}
+
+.btn-action {
+    background: var(--btn-action-bg);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.btn-action:hover {
+    background: var(--btn-action-hover);
+}
+
+.btn-operator {
+    background: var(--btn-operator-bg);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.btn-operator:hover {
+    background: var(--btn-operator-hover);
+}
+
+.btn-equals {
+    background: var(--btn-equals-bg);
+    font-size: 1.8rem;
+}
+
+.btn-equals:hover {
+    background: var(--btn-equals-hover);
+}
+
+.btn-zero {
+    grid-column: span 2;
+    border-radius: 16px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 28px;
+}
