@@ -252,3 +252,62 @@ body {
 .btn-sci:hover {
     background: rgba(116, 104, 255, 0.3);
 }
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 500px) {
+    .calculator-container {
+        padding: 1rem;
+        width: 100%;
+    }
+    
+    .calculator {
+        width: 100%;
+        padding: 20px 14px;
+        border-radius: 24px;
+    }
+    
+    .sci-calculator {
+        width: 100%;
+    }
+    
+    .keypad {
+        gap: 6px;
+    }
+    
+    .btn {
+        height: 50px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+    
+    .btn-sci {
+        font-size: 0.85rem;
+    }
+    
+    .btn-action {
+        font-size: 0.95rem;
+    }
+    
+    .btn-operator, .btn-equals {
+        font-size: 1.4rem;
+    }
+    
+    .current-operand {
+        font-size: 2.2rem;
+    }
+    
+    .previous-operand {
+        font-size: 0.9rem;
+    }
+    
+    .btn-zero {
+        padding-left: 20px;
+    }
+    
+    .display {
+        min-height: 90px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+}
+
